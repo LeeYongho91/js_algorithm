@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+
+                let answer = 0;
+
+                // for (let i = 0; i< s.length; i++) {
+                //   const e = s[i];
+
+                //   if(s.indexOf(e) == i) answer += e;
+                   
+                // }
+                
+                // 특정 문자 갯수 찾기
+                let pos = s.indexOf('u');
+
+                while(pos != -1) {
+                    answer++;
+                    pos = s.indexOf('u', pos + 1);
+                }
+
+              
+
+                return answer
+            }
+            
+            console.log(solution('usruuserqq'));
+        </script>
+    </body>
+</html>

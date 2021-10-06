@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+
+                let answer = 1;
+
+                for (let i = 1; i < s.length; i++) {
+                    let cur = s[i];
+                    let before = s[i-1];
+                    
+                    if(cur > before ) answer++;
+                }   
+               
+            
+                return answer;
+            }
+            
+            console.log(solution([130, 135, 148, 145, 150, 150, 153]));
+        </script>
+    </body>
+</html>
