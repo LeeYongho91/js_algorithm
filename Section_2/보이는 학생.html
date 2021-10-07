@@ -5,22 +5,45 @@
     </head>
     <body>
         <script>
-            function solution(s){
+            function solution(arr){
 
                 let answer = 1;
+                
+                for (let i = 1; i < arr.length; i++) {
+                    let cur = arr[i];
+                    let bool = true;
+         
+                    for (let j = i-1; j >= 0; j--) {
 
-                for (let i = 1; i < s.length; i++) {
-                    let cur = s[i];
-                    let before = s[i-1];
-                    
-                    if(cur > before ) answer++;
-                }   
-               
+                        let before = arr[j];
+                       
+                        if(cur <= before) {
+                            bool = false;
+                            break;
+                        }    
+                    }
+                    if(bool) answer++;
+                }
+
+                // let answer = 1, max = arr[0];
+
+                // for (let i = 1; i < arr.length; i++) {
+                //     let cur = arr[i];
             
+                //     if(cur > max ) {
+                //         answer++;
+                //         max = cur;
+                //     }
+                // }   
+
+
+
+
+               
                 return answer;
             }
             
-            console.log(solution([130, 135, 148, 145, 150, 150, 153]));
+            console.log(solution([130, 135, 148, 140, 145, 150, 157, 159]));
         </script>
     </body>
 </html>
