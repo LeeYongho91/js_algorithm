@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a1,a2){
+            
+                let answer = [];
+                let n = a1.length;
+                let m = a2.length;
+
+                let p1 = p2 = 0;
+
+                while(p1<n && p2<m) {
+                    if(a1[p1] <= a2[p2]) answer.push(a1[p1++]);
+                    else answer.push(a2[p2++]);
+                }
+
+                while (p1< n) answer.push(a1[p1++]);
+                while (p2< m) answer.push(a2[p2++]);
+
+
+                
+                return answer;
+            }            
+            console.log(solution([1,3,5], [2,3,6,7,9]));
+        </script>
+    </body>
+</html>
