@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+
+            // hash map
+       
+            function solution(s){
+            
+                let answer = 0;
+                let sh = new Map();
+                let max = Number.MIN_SAFE_INTEGER;
+
+                for(let x of s) {
+                    if(sh.has(x)) sh.set(x, sh.get(x)+1);
+                    else sh.set(x, 1);
+                }
+                
+                for(let [key,val] of sh) {
+                    if(val > max) {
+                        max = val;
+                        answer = key;
+                    }
+                }
+                
+                return answer;
+            }            
+            console.log(solution('BACBACCACCBDEDE'));
+        </script>
+    </body>
+</html>
