@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+
+            // 스택 선입후출 last in first out LIFO   push, pop
+
+            // 큐 선입선출 first in first out FIFO 
+            function solution(s){
+            
+                let answer = 'YES';
+                let stack = [];
+
+                for(let x of s) {
+                    if(x === '(') stack.push(x);
+                    else {
+                        if(stack.length === 0) return 'NO';
+                        stack.pop();
+                    }
+                }
+
+                if(stack.length > 0) return 'NO';
+
+                return answer;
+            }
+
+            console.log(solution('(()(()))(()'));
+
+            
+            
+        </script>
+    </body>
+</html>

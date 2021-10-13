@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+            
+                let answer = 0;
+                let stack = [];
+                let lt = rt = n = 0;
+
+                for(let x of s) {
+                    if(!isNaN(x)) {
+                        stack.push(parseInt(x));
+                    } else {
+                        lt = rt = n = 0;
+                        rt = stack.pop();
+                        lt = stack.pop();
+                        if(x === '+') {
+                            n = lt + rt;
+                        } else if(x === '*') {
+                            n = lt * rt;
+                        } else if(x === '-') {
+                            n = lt - rt;
+                        }
+                        stack.push(n);
+                    }
+                }
+
+                answer = stack[0];
+           
+                return answer;
+            }
+
+            console.log(solution('352+*9-')); 
+        </script>
+    </body>
+</html>
